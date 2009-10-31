@@ -1,13 +1,36 @@
 HasDurationField
 ================
+!! HasDurationField requires the proxy_field plugin !!
+Install proxy_field
+./script/plugin install git://github.com/angelo0000/proxy_field.git
 
-Introduction goes here.
 
+Install HadDurationField
+./script/plugin install git://github.com/angelo0000/has_duration_field.git
+
+Provideds ability to wrap ActiveRecord column(s) with a DurationField
+object.
 
 Example
 =======
 
-Example goes here.
+class WaitingRoom < ActiveRecord::Base
+  has_duration_field :duration
+  #also valid:
+  # has_duration_field [:col1, :col2]
+end
+
+This will automatically return a DurationField object when you call .duration
+on an instance of WaitingRoom. You get the following methods on the returned
+object:
+
+.to_seconds
+.to_minutes
+.to_hours
+.to_days
+.to_weeks
+.to_years
 
 
-Copyright (c) 2009 [name of plugin creator], released under the MIT license
+Copyright (c) 2009 StarterStep, released under the MIT license
+

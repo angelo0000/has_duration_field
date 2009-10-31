@@ -13,7 +13,7 @@ module StarterStep
     end
 
     def to_days
-      self.to_hours / 24
+      to_hours / 24
     end
 
     def to_hours

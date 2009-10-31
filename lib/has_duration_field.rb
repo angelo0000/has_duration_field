@@ -32,7 +32,7 @@ module StarterStep
     end
 
     module ClassMethods
-      def has_duration_fields(fields)
+      def has_duration_field(fields)
          proxy_field fields, :as => StarterStep::DurationField
       end
     end
